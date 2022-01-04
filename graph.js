@@ -61,20 +61,20 @@ class Graph {
   breadthFirstSearch(start) {
     const queue = [start];
     const seen = new Set(queue);
-    // const resultArr = [];
+    const resultArr = [];
     while (queue.length) {
       let current = queue.shift();
+      resultArr.push(current.value);
       for (let vertex of current.adjacent) {
         if (!seen.has(vertex)) {
           queue.push(vertex);
           seen.add(vertex);
-          // resultArr.push(vertex.value);
         }
       }
     }
     // seen.forEach((x) => resultArr.push(x.value));
     // return [...seen].map((element) => element.value);
-    return Array.from(seen).map((element) => element.value);
+    return resultArr;
   }
 }
 

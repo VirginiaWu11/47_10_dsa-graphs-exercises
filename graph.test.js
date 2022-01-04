@@ -184,7 +184,7 @@ describe("BFS", function () {
     graph.addEdge(R, T);
     graph.addEdge(W, T);
 
-    expect(graph.breadthFirstSearch(S)).toEqual([
+    expect(graph.breadthFirstSearch(S)).toStrictEqual([
       "S",
       "P",
       "U",
